@@ -151,17 +151,19 @@
 </section>
 
 <!-- ===== NEWSLETTER ===== -->
+
 <section class="newsletter" id="contato">
   <p class="newsletter-title">Saiba primeiro das nossas novidades e promoções no seu e-mail:</p>
   <p class="newsletter-obs">*campos obrigatórios</p>
-  <form class="newsletter-form">
-    <input type="text" placeholder="Nome*" required>
-    <input type="email" placeholder="E-mail*" required>
-    <input type="text" placeholder="Data de aniversário*" required>
+  <form class="newsletter-form" action="https://formspree.io/f/xeaqrlzb" method="POST">
+    <input type="text" name="nome" placeholder="Nome*" required>
+    <input type="email" name="email" placeholder="E-mail*" required>
+    <input type="text" name="aniversario" placeholder="Data de aniversário*" required>
     <button type="submit" class="btn btn-dark">enviar</button>
   </form>
   <p class="newsletter-safe">Suas informações estão seguras</p>
 </section>
+
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
