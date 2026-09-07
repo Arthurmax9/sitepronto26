@@ -12,11 +12,29 @@ a{text-decoration:none;color:inherit;}
   color:#888;font-size:13px;text-align:center;padding:10px;
   border:1px dashed #aaa;
 }
+.img-placeholder {
+  position: relative;   
+  overflow: hidden;
+  border-radius: 0%; /* ou o valor que faz o oval, ex: 50% / 30% */
+  width: 100%; /* ou tamanho fixo desejado */
+  height: 100%;
+}
+
+.img-placeholder img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* preenche todo o espaço, cortando o excesso proporcionalmente */
+  object-position: center; /* ajusta o foco da imagem, pode trocar por "top", "center 30%" etc */
+}
+
 
 /* ===== HEADER ===== */
 .header{
   display:flex;align-items:center;justify-content:space-between;
-  padding:15px 50px;background:#8b0000;position:sticky;top:0;z-index:100;
+  padding:15px 50px;background:#8b4f00;position:sticky;top:0;z-index:100;
 }
 .logo{color:#f5d78e;font-family:'Playfair Display',serif;font-weight:700;font-size:18px;line-height:1.1;}
 .logo span{font-size:14px;letter-spacing:1px;}
