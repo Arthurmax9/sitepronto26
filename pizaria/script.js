@@ -14,8 +14,26 @@ document.querySelectorAll('.nav a').forEach(link => {
 });
 
 // Newsletter - exemplo de submit
-document.querySelector('.newsletter-form')?.addEventListener('submit', (e) => {
+document.querySelector('.newsletter-form')?.addEventListener('submit', async (e) => {
   e.preventDefault();
-  alert('Cadastro enviado com sucesso!');
-  e.target.reset();
+  const form = e.target;
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      alert('Cadastro enviado com sucesso!');
+      form.reset();
+    } else {
+      alert('Erro ao enviar. Tente novamente.');
+    }
+  } catch (error) {
+    alert('Erro ao enviar. Tente novamente.');
+  }
 });
+
