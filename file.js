@@ -62,3 +62,35 @@ document.querySelectorAll('[data-plano]').forEach(btn => {
     window.open(url, '_blank');
   });
 });
+
+
+// Newsletter/Contato - envio via Formspree (AJAX)
+document.querySelector('.newsletter-form')?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const button = form.querySelector('button[type="submit"]');
+  const originalText = button.textContent;
+
+  button.disabled = true;
+  button.textContent = 'Enviando...';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+      form.reset();
+    } else {
+      alert('Ocorreu um erro ao enviar. Tente novamente.');
+    }
+  } catch (error) {
+    alert('Erro de conexão. Verifique sua internet e tente novamente.');
+  } finally {
+    button.disabled = false;
+    button.textContent = originalText;
+  }
+});
