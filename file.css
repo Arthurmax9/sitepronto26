@@ -235,6 +235,21 @@ h2.center{
 .card h3{ margin-bottom:10px; }
 .card p{ color:var(--text-muted); font-size:14px; margin-bottom:15px; }
 .link-cta{ color:var(--neon-orange); font-weight:700; text-decoration:none; }
+.card-banner {
+  height: 220px; /* mesma altura dos banners com emoji */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 
 /* ===== DEPOIMENTOS ===== */
 .depoimentos{ padding:100px 60px; }

@@ -2,22 +2,27 @@
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.getElementById('nav');
 
-menuToggle.addEventListener('click', () => {
-  nav.classList.toggle('open');
-});
-
-// Fecha menu ao clicar em um link (mobile)
-document.querySelectorAll('.nav a').forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('open');
+if (menuToggle && nav) {
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
   });
-});
 
-// Newsletter - exemplo de submit
+  // Fecha menu ao clicar em um link (mobile)
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+    });
+  });
+}
+
+// Newsletter - submit via fetch
 document.querySelector('.newsletter-form')?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const form = e.target;
   const data = new FormData(form);
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  if (submitBtn) submitBtn.disabled = true;
 
   try {
     const response = await fetch(form.action, {
@@ -34,6 +39,7 @@ document.querySelector('.newsletter-form')?.addEventListener('submit', async (e)
     }
   } catch (error) {
     alert('Erro ao enviar. Tente novamente.');
+  } finally {
+    if (submitBtn) submitBtn.disabled = false;
   }
 });
-
