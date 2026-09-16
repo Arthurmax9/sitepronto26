@@ -1,0 +1,95 @@
+.modal-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,0.75);
+  display:none; align-items:center; justify-content:center;
+  z-index:200; padding:20px;
+}
+.modal-overlay.open{ display:flex; }
+.modal-box{
+  background:var(--bg-alt); border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px; padding:35px; max-width:600px; width:100%;
+  max-height:90vh; overflow-y:auto; position:relative;
+}
+.modal-close{
+  position:absolute; top:15px; right:20px; background:none; border:none;
+  color:var(--text); font-size:28px; cursor:pointer;
+}
+.modal-img{ width:100%; border-radius:12px; margin:15px 0; }
+.modal-lista{ list-style:none; margin:15px 0; }
+.modal-lista li{ padding:6px 0; color:var(--text-muted); font-size:14px; }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body{
+    font-family:'Poppins', sans-serif;
+    background:#06070a;
+    color:#e5e7eb;
+    padding:60px 20px;
+  }
+
+  .container{
+    max-width:800px;
+    margin:0 auto;
+  }
+
+  a.voltar{
+    display:inline-block;
+    color:#00ffab;
+    text-decoration:none;
+    font-weight:600;
+    margin-bottom:25px;
+  }
+  a.voltar:hover{ text-decoration:underline; }
+
+  .pill{
+    display:inline-block;
+    padding:6px 16px;
+    border-radius:20px;
+    background:rgba(0,255,171,0.15);
+    color:#00ffab;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:15px;
+  }
+
+  h1{
+    font-size:32px;
+    font-weight:800;
+    margin-bottom:20px;
+    color:#e5e7eb;
+  }
+
+  img{
+    width:100%;
+    border-radius:14px;
+    margin-bottom:25px;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 10px 40px rgba(0,0,0,0.4);
+  }
+
+  p{
+    line-height:1.7;
+    color:#9ca3af;
+    margin-bottom:18px;
+    font-size:15.5px;
+  }
+
+  p strong{ color:#e5e7eb; }
+
+  ul{
+    list-style:none;
+    margin-bottom:25px;
+  }
+
+  li{
+    padding:8px 0;
+    color:#e5e7eb;
+    font-size:15px;
+  }
+
+  code{
+    background:rgba(255,255,255,0.08);
+    padding:2px 8px;
+    border-radius:6px;
+    font-size:14px;
+    color:#00ffab;
+  }

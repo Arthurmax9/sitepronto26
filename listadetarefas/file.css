@@ -1,0 +1,217 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #e5e7eb;
+}
+
+.app {
+  max-width: 620px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.app-header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.subtitle {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* Progresso */
+.progress-wrap { margin-bottom: 25px; }
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+.progress-bar {
+  height: 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+/* Formulário */
+.todo-form { margin-bottom: 25px; }
+.todo-form h2 {
+  font-size: 16px;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e5e7eb;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+input::placeholder { color: #6b7280; }
+input:focus, select:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+select option { background: #1a1a2e; color: #fff; }
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-add {
+  padding: 12px;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  color: #fff;
+  font-size: 14px;
+}
+.btn-add:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4); }
+
+/* Busca / Filtro */
+.busca, .filtro { margin-bottom: 20px; }
+.filtro-options {
+  display: flex;
+  gap: 16px;
+}
+.filtro-options div { flex: 1; }
+.filtro-options label {
+  display: block;
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+/* Lista de tarefas */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  color: #6b7280;
+  padding: 20px 0;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: 0.2s;
+  animation: fadeIn 0.3s ease;
+}
+.todo:hover { border-color: rgba(56, 189, 248, 0.4); transform: translateX(2px); }
+
+.todo.completed .todo-text {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.check-btn {
+  background: none;
+  font-size: 18px;
+  padding: 0;
+}
+
+.todo-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+.todo-text {
+  font-size: 14px;
+  color: #e5e7eb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.todo-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.remove-btn {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  font-size: 13px;
+  padding: 6px 10px;
+  flex-shrink: 0;
+}
+.remove-btn:hover { background: rgba(239, 68, 68, 0.3); }
+
+.btn-clear {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #9ca3af;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.btn-clear:hover { color: #ef4444; border-color: #ef4444; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 500px) {
+  .form-row { flex-direction: row; }
+  .form-row input { flex: 2; }
+  .form-row select { flex: 1; }
+  .btn-add { flex: 1; }
+}

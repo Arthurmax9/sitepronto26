@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Previsão do Tempo</title>
+  <link rel="icon" href="https://cdn.icon-icons.com/icons2/3192/PNG/512/temperature_thermometer_cold_warm_hot_icon_194270.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-overlay" id="bgOverlay"></div>
+
+  <main class="card-tempo">
+
+    <header class="topo">
+      <h1>🌤️ Previsão do Tempo</h1>
+    </header>
+
+    <div class="busca">
+      <input type="text" id="cidadeInput" placeholder="Digite o nome da cidade..." autocomplete="off">
+      <button id="btnBuscar" aria-label="Buscar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+      <button id="btnLocal" aria-label="Usar localização atual" title="Usar minha localização">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+      </button>
+    </div>
+
+    <p id="mensagemErro" class="erro hidden">Cidade não encontrada. Tente novamente.</p>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+    </div>
+
+    <section id="resultado" class="resultado hidden">
+
+      <div class="localidade">
+        <h2 id="cidade">—</h2>
+        <p id="dataHora">—</p>
+      </div>
+
+      <div class="principal">
+        <img id="iconeTempo" class="icone-tempo" src="" alt="ícone do tempo">
+        <div class="temp-grande">
+          <span id="temp">--°</span>
+        </div>
+      </div>
+
+      <p id="descricao" class="descricao">—</p>
+      <p id="sensacao" class="sensacao">—</p>
+
+      <div class="detalhes-grid">
+        <div class="detalhe-box">
+          <span class="label">Máx.</span>
+          <span id="tempMax" class="valor">--°</span>
+        </div>
+        <div class="detalhe-box">
+          <span class="label">Mín.</span>
+          <span id="tempMin" class="valor">--°</span>
+        </div>
+        <div class="detalhe-box">
+          <span class="label">Umidade</span>
+          <span id="umidade" class="valor">--%</span>
+        </div>
+        <div class="detalhe-box">
+          <span class="label">Vento</span>
+          <span id="vento" class="valor">-- km/h</span>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
