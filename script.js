@@ -37,7 +37,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 // ===== SCROLL REVEAL =====
 const revealElements = document.querySelectorAll(
-  '.skill-card, .card-projeto, .depo-card, .faq-item, .sobre-texto, .sobre-img'
+  '.skill-card, .card-projeto, .depo-card, .faq-item, .sobre-texto, .sobre-img, .area-card'
 );
 revealElements.forEach(el => el.classList.add('reveal'));
 
@@ -57,38 +57,26 @@ function initCarrossel(carrosselId, setaEsqId, setaDirId) {
   const setaEsq = document.getElementById(setaEsqId);
   const setaDir = document.getElementById(setaDirId);
 
-  const scrollAmount = 320; // ajuste conforme a largura do seu card
+  function getScrollAmount() {
+    const card = carrossel.querySelector('.card-projeto');
+    if (!card) return 320;
+    const gap = 30;
+    return card.offsetWidth + gap;
+  }
 
-  setaDir.addEventListener('click', () => {
-    carrossel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  setaDir?.addEventListener('click', () => {
+    carrossel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
   });
 
-  setaEsq.addEventListener('click', () => {
-    carrossel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  setaEsq?.addEventListener('click', () => {
+    carrossel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
   });
 }
 
-// Inicializa os dois carrosséis
 initCarrossel('carrosselSites', 'setaEsqSites', 'setaDirSites');
 initCarrossel('carrosselOutros', 'setaEsqOutros', 'setaDirOutros');
 
-
-function getScrollAmount() {
-  const card = carrossel.querySelector('.card-projeto');
-  if (!card) return 320;
-  const gap = 30;
-  return card.offsetWidth + gap;
-}
-
-setaEsq?.addEventListener('click', () => {
-  carrossel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-});
-
-setaDir?.addEventListener('click', () => {
-  carrossel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-});
-
-// Newsletter/Contato - envio via Formspree (AJAX)
+// ===== NEWSLETTER / CONTATO - ENVIO VIA FORMSPREE (AJAX) =====
 document.querySelector('.newsletter-form')?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const form = e.target;
@@ -118,3 +106,17 @@ document.querySelector('.newsletter-form')?.addEventListener('submit', async (e)
     button.textContent = originalText;
   }
 });
+
+// ===== ANIMAÇÃO DAS BARRAS DE SKILL AO ENTRAR NA TELA =====
+const skillFills = document.querySelectorAll('.skill-fill');
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const w = entry.target.style.width;
+      entry.target.style.width = '5%';
+      setTimeout(() => entry.target.style.width = w, 100);
+      skillObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.10 });
+skillFills.forEach(f => skillObserver.observe(f));
