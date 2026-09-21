@@ -258,9 +258,15 @@ h2.center{
 .skill-bar{
   width:100%; height:6px; background:rgba(255,255,255,0.08); border-radius:10px; overflow:hidden;
 }
+/* CORREÇÃO CLS: agora usa transform:scaleX() ao invés de width, sem reflow */
 .skill-fill{
-  height:100%; background:var(--grad-1); border-radius:10px;
-  transition:width 1.2s ease;
+  height:100%;
+  width:100%;
+  background:var(--grad-1);
+  border-radius:10px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1.2s ease;
 }
 
 @media(max-width:900px){ .skills-grid{ grid-template-columns:repeat(2,1fr); } }

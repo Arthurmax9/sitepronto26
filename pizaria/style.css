@@ -5,9 +5,9 @@ em { font-family: 'Playfair Display', serif; font-style: italic; }
 a { text-decoration: none; color: inherit; }
 .center { text-align: center; }
 
-/* placeholder genérico para imagens */
+/* placeholder genérico para imagens - LEVE (sem gradiente pesado) */
 .img-placeholder {
-  background: repeating-linear-gradient(45deg, #ddd, #ddd 10px, #eee 10px, #eee 20px);
+  background-color: #e5e5e5; /* cor sólida = 0 custo de repaint, antes era gradiente repetido */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,11 +15,11 @@ a { text-decoration: none; color: inherit; }
   font-size: 13px;
   text-align: center;
   padding: 10px;
-  border: 1px dashed #aaa;
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 100%;
+  contain: content; /* isola repaint/layout, evita afetar o resto da página */
 }
 
 .img-placeholder img {
@@ -46,7 +46,7 @@ a { text-decoration: none; color: inherit; }
 .logo { color: #f5d78e; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; line-height: 1.1; }
 .logo span { font-size: 14px; letter-spacing: 1px; }
 .nav { display: flex; gap: 28px; }
-.nav a { color: #f5d78e; font-weight: 600; font-size: 15px; transition: .3s; }
+.nav a { color: #f5d78e; font-weight: 600; font-size: 15px; transition: color .3s; }
 .nav a.active { font-family: 'Playfair Display', serif; font-style: italic; }
 .nav a:hover { color: #fff; }
 .menu-toggle { display: none; background: none; border: none; color: #f5d78e; font-size: 26px; cursor: pointer; }
@@ -66,6 +66,8 @@ a { text-decoration: none; color: inherit; }
   padding: 50px 60px;
   gap: 40px;
   flex-wrap: wrap;
+  content-visibility: auto; /* só renderiza quando entra na viewport */
+  contain-intrinsic-size: 500px;
 }
 .promo-left, .promo-center, .promo-right { flex: 1; min-width: 250px; }
 .promo-tag { color: #f5d78e; font-style: italic; }
@@ -87,12 +89,17 @@ a { text-decoration: none; color: inherit; }
 .promo-pizza-img { width: 100%; height: 220px; border-radius: 50%; }
 
 /* ===== NOSSAS CASAS ===== */
-.casas { background: #f6c976; padding: 80px 60px; }
+.casas {
+  background: #f6c976;
+  padding: 80px 60px;
+  content-visibility: auto;
+  contain-intrinsic-size: 700px;
+}
 .casas h2 { font-family: 'Playfair Display', serif; font-size: 38px; color: #8b0000; margin-bottom: 20px; }
 .subtitle { max-width: 900px; margin: 0 auto 40px; color: #8b0000; line-height: 1.6; }
 .casas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
 .casa-card { position: relative; }
-.casa-img { width: 100%; height: 280px; }
+.casa-img { width: 100%; height: 280px; aspect-ratio: 320/280; }
 .casa-label {
   position: absolute;
   bottom: 15px;
@@ -106,7 +113,13 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ===== DESTAQUES CARDÁPIO ===== */
-.cardapio { background: #3a4a1e; color: #f5d78e; padding: 80px 60px; }
+.cardapio {
+  background: #3a4a1e;
+  color: #f5d78e;
+  padding: 80px 60px;
+  content-visibility: auto;
+  contain-intrinsic-size: 700px;
+}
 .cardapio-header {
   display: flex;
   justify-content: space-between;
@@ -120,7 +133,7 @@ a { text-decoration: none; color: inherit; }
 .cardapio-header .subtitle { color: #f5d78e; max-width: 400px; margin: 0; text-align: left; }
 .pizza-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
 .pizza-card { position: relative; }
-.pizza-img { width: 100%; height: 280px; background: #111; color: #666; }
+.pizza-img { width: 100%; height: 280px; background: #111; color: #666; aspect-ratio: 280/280; }
 .pizza-card span {
   position: absolute;
   bottom: 15px;
@@ -132,7 +145,13 @@ a { text-decoration: none; color: inherit; }
 .link-cta { color: #f5d78e; font-style: italic; font-weight: 700; display: inline-block; margin-top: 30px; }
 
 /* ===== DELIVERY ===== */
-.delivery { display: flex; background: #8b0000; color: #f5d78e; }
+.delivery {
+  display: flex;
+  background: #8b0000;
+  color: #f5d78e;
+  content-visibility: auto;
+  contain-intrinsic-size: 500px;
+}
 .delivery-left { flex: 1; padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; }
 .delivery-left h2 { font-family: 'Playfair Display', serif; font-size: 34px; margin-bottom: 20px; }
 .delivery-left em { color: #f5d78e; }
@@ -143,18 +162,31 @@ a { text-decoration: none; color: inherit; }
 .delivery-img { width: 100%; height: 100%; min-height: 400px; }
 
 /* ===== RESERVAS ===== */
-.reservas { display: flex; background: #f6c976; align-items: center; }
+.reservas {
+  display: flex;
+  background: #f6c976;
+  align-items: center;
+  content-visibility: auto;
+  contain-intrinsic-size: 400px;
+}
 .reservas-left { flex: 1; padding: 80px 60px; text-align: center; }
 .reservas-left h2 { font-family: 'Playfair Display', serif; font-size: 38px; color: #8b0000; margin-bottom: 20px; }
 .reservas-left p { color: #8b0000; margin-bottom: 30px; }
 .reservas-right { flex: 1; padding: 40px; }
-.reservas-img { width: 100%; height: 320px; border-radius: 14px; }
+.reservas-img { width: 100%; height: 320px; border-radius: 14px; aspect-ratio: 16/9; }
 
 /* ===== INSTAGRAM ===== */
-.instagram { background: #8b0000; color: #f5d78e; padding: 80px 60px; text-align: center; }
+.instagram {
+  background: #8b0000;
+  color: #f5d78e;
+  padding: 80px 60px;
+  text-align: center;
+  content-visibility: auto;
+  contain-intrinsic-size: 600px;
+}
 .instagram h2 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 40px; }
 .insta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 1200px; margin: 0 auto 40px; }
-.insta-img { height: 340px; }
+.insta-img { height: 340px; aspect-ratio: 1/1; }
 
 /* ===== NEWSLETTER ===== */
 .newsletter { background: #f6c976; padding: 50px 60px; }

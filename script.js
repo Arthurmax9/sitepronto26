@@ -107,14 +107,15 @@ document.querySelector('.newsletter-form')?.addEventListener('submit', async (e)
   }
 });
 
-// ===== ANIMAÇÃO DAS BARRAS DE SKILL AO ENTRAR NA TELA =====
+// ===== ANIMAÇÃO DAS BARRAS DE SKILL (SEM CAUSAR LAYOUT SHIFT) =====
+// Agora usa data-percent no HTML e transform:scaleX() no CSS,
+// evitando reflow forçado e reduzindo o CLS.
 const skillFills = document.querySelectorAll('.skill-fill');
 const skillObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const w = entry.target.style.width;
-      entry.target.style.width = '5%';
-      setTimeout(() => entry.target.style.width = w, 100);
+      const percent = parseFloat(entry.target.dataset.percent) || 0;
+      entry.target.style.transform = `scaleX(${percent / 100})`;
       skillObserver.unobserve(entry.target);
     }
   });

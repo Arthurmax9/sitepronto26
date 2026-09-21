@@ -4,11 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arthur Max | Desenvolvedor de Sistemas & Soluções em Tecnologia</title>
+
+<!-- Content Security Policy -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-ancestors 'none';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
 </head>
 <body>
 
@@ -98,7 +105,9 @@
 
     <div class="sobre-img">
       <div class="sobre-img-glow"></div>
-      <div class="foto-placeholder"><img src="codemax.png" alt="Arthur Max - Desenvolvedor de Sistemas"></div>
+      <div class="foto-placeholder">
+        <img src="codemax.webp" alt="Arthur Max - Desenvolvedor de Sistemas" width="240" height="240" fetchpriority="high">
+      </div>
       <span class="status-badge"><span class="status-dot"></span> Disponível para novos projetos</span>
     </div>
 
@@ -179,7 +188,7 @@
           <span class="skill-level">Avançado</span>
         </div>
       </div>
-      <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+      <div class="skill-bar"><div class="skill-fill" data-percent="92"></div></div>
     </div>
 
     <div class="skill-card">
@@ -192,7 +201,7 @@
           <span class="skill-level">Avançado</span>
         </div>
       </div>
-      <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      <div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
     </div>
 
     <div class="skill-card">
@@ -205,7 +214,7 @@
           <span class="skill-level">Avançado</span>
         </div>
       </div>
-      <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+      <div class="skill-bar"><div class="skill-fill" data-percent="88"></div></div>
     </div>
 
     <div class="skill-card">
@@ -218,7 +227,7 @@
           <span class="skill-level">Avançado</span>
         </div>
       </div>
-      <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      <div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
     </div>
 
     <div class="skill-card">
@@ -231,7 +240,7 @@
           <span class="skill-level">Intermediário</span>
         </div>
       </div>
-      <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+      <div class="skill-bar"><div class="skill-fill" data-percent="75"></div></div>
     </div>
 
     <div class="skill-card">
@@ -244,7 +253,7 @@
           <span class="skill-level">Intermediário</span>
         </div>
       </div>
-      <div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div>
+      <div class="skill-bar"><div class="skill-fill" data-percent="72"></div></div>
     </div>
   </div>
 </section>
@@ -269,7 +278,9 @@
     <div class="carrossel" id="carrosselSites">
 
       <div class="card-projeto">
-        <div class="card-banner banner-green"><img src="academiaimg.jpg.png" alt="Academia"></div>
+        <div class="card-banner banner-green">
+          <img src="academiaimg.webp" alt="Academia" width="320" height="200" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="pill pill-green">Academia</span>
           <h3>Studio de Treinamento</h3>
@@ -279,7 +290,9 @@
       </div>
 
       <div class="card-projeto">
-        <div class="card-banner banner-orange"><img src="img para pizzaria.png" alt="Pizzaria"></div>
+        <div class="card-banner banner-orange">
+          <img src="img-pizzaria.webp" alt="Pizzaria" width="320" height="200" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="pill pill-orange">Pizzaria</span>
           <h3>Cardápio Digital</h3>
@@ -289,7 +302,9 @@
       </div>
 
       <div class="card-projeto">
-        <div class="card-banner banner-purple"><img src="clinica/img/imagemclinica.png" alt=""></div>
+        <div class="card-banner banner-purple">
+          <img src="clinica/img/imagemclinica.webp" alt="Clínica" width="320" height="200" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="pill pill-purple">Clinica</span>
           <h3>Clínica &amp; </h3>
@@ -299,7 +314,9 @@
       </div>
 
       <div class="card-projeto">
-        <div class="card-banner banner-purple"><img src="advocacia/img/imgadovacia.png" alt=""></div>
+        <div class="card-banner banner-purple">
+          <img src="advocacia/img/imgadovacia.webp" alt="Advocacia" width="320" height="200" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="pill pill-purple">escritorio</span>
           <h3>Advocacia &amp; </h3>
@@ -323,7 +340,9 @@
     <div class="carrossel" id="carrosselOutros">
 
       <div class="card-projeto">
-        <div class="card-banner banner-ml"><img src="mlimoveis/previsao-imoveis.png" alt="Previsão de preços com Machine Learning"></div>
+        <div class="card-banner banner-ml">
+          <img src="mlimoveis/previsao-imoveis.webp" alt="Previsão de preços com Machine Learning" width="320" height="200" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="pill pill-ml">Machine Learning</span>
           <h3>Previsão de Preços de Imóveis</h3>
@@ -333,7 +352,9 @@
       </div>
 
       <div class="card-projeto">
-        <div class="card-banner banner-weather"><img src="tempojs-main/img/imgtempo.png" alt=""></div>
+        <div class="card-banner banner-weather">
+          <img src="tempojs-main/img/imgtempo.webp" alt="Previsão do tempo" width="320" height="200" loading="lazy">
+        </div>
         <div class="card-body">
           <span class="pill pill-weather">API / JavaScript</span>
           <h3>Previsão do Tempo</h3>
@@ -480,7 +501,7 @@
     <span class="tag center">Vamos conversar</span>
     <h2 class="center">Vamos criar sua solução agora?</h2>
     <p class="center">Fale comigo direto no WhatsApp, conte sobre seu projeto e receba uma proposta personalizada.</p>
-    <a href="https://wa.me/5551993776060" target="_blank" class="btn btn-primary btn-lg">Falar no WhatsApp</a>
+    <a href="https://wa.me/5551993776060" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Falar no WhatsApp</a>
   </div>
 </section>
 
@@ -491,6 +512,10 @@
     <input type="text" name="nome" placeholder="Nome*" required>
     <input type="email" name="email" placeholder="E-mail*" required>
     <input type="tel" name="telefone" placeholder="telefone*" required>
+
+    <!-- Honeypot anti-spam (invisível para humanos, Formspree descarta automaticamente) -->
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
     <button type="submit" class="btn btn-dark">enviar</button>
   </form>
   <p class="newsletter-safe">Suas informações estão seguras</p>
@@ -502,8 +527,8 @@
 </footer>
 
 <!-- WhatsApp flutuante -->
-<a href="https://wa.me/5551993776060" target="_blank" class="whatsapp-float">
-  <img src="wpp.png" alt="WhatsApp">
+<a href="https://wa.me/5551993776060" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+  <img src="wpp.webp" alt="WhatsApp" width="60" height="60" loading="lazy">
 </a>
 
 </body>

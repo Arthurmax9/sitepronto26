@@ -1,202 +1,421 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .bg-overlay {
-    position: fixed;
-    inset: 0;
-    background: url('https://images.unsplash.com/photo-1601134467661-3f9c4d5c9a5a?auto=format&fit=crop&w=1932&q=80') center/cover no-repeat;
-    opacity: 0.25;
-    z-index: 0;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1601134467661-3f9c4d5c9a5a?auto=format&fit=crop&w=1932&q=80') center/cover no-repeat;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.card-tempo {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 32px 28px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.topo h1 {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.busca {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.busca input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.busca input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.busca button {
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  width: 46px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.busca button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.erro {
+  text-align: center;
+  color: #ff8080;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.resultado {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.localidade h2 {
+  font-size: 24px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.localidade p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+  text-transform: capitalize;
+}
+
+.principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.icone-tempo {
+  width: 80px;
+  height: 80px;
+}
+
+.temp-grande span {
+  font-size: 56px;
+  font-weight: 300;
+}
+
+.descricao {
+  font-size: 17px;
+  text-transform: capitalize;
+  color: #ffcf7d;
+  font-weight: 500;
+}
+
+.sensacao {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+}
+
+.detalhes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.detalhe-box {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 12px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.detalhe-box .label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.detalhe-box .valor {
+  font-size: 15px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+/* ===================================================
+   TABLETS E TELAS MÉDIAS (até 600px)
+=================================================== */
+@media (max-width: 600px) {
   .card-tempo {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 420px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 24px;
-    padding: 32px 28px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    color: #fff;
-    animation: fadeIn 0.5s ease;
+    max-width: 100%;
+    padding: 26px 20px;
+    border-radius: 20px;
   }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
+
   .topo h1 {
-    font-size: 22px;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 24px;
+    font-size: 19px;
+    margin-bottom: 18px;
   }
-  
-  .busca {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 8px;
-  }
-  
+
   .busca input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 12px 18px;
-    border-radius: 14px;
-    font-size: 15px;
-    background: rgba(255, 255, 255, 0.12);
-    color: #fff;
-  }
-  
-  .busca input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-  }
-  
-  .busca button {
-    border: none;
-    outline: none;
-    border-radius: 14px;
-    width: 46px;
-    background: rgba(255, 255, 255, 0.12);
-    color: #fff;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s ease;
-  }
-  
-  .busca button:hover {
-    background: rgba(255, 255, 255, 0.25);
-  }
-  
-  .erro {
-    text-align: center;
-    color: #ff8080;
+    padding: 11px 14px;
     font-size: 14px;
-    margin: 10px 0;
   }
-  
-  .hidden {
-    display: none !important;
+
+  .busca button {
+    width: 42px;
   }
-  
-  .loading {
-    display: flex;
-    justify-content: center;
-    padding: 30px 0;
-  }
-  
-  .spinner {
-    width: 36px;
-    height: 36px;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    border-top-color: #fff;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-  }
-  
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-  
-  .resultado {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
+
   .localidade h2 {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 20px;
   }
-  
-  .localidade p {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-    margin-top: 4px;
-    text-transform: capitalize;
-  }
-  
-  .principal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin: 10px 0;
-  }
-  
+
   .icone-tempo {
-    width: 80px;
-    height: 80px;
+    width: 68px;
+    height: 68px;
   }
-  
+
   .temp-grande span {
-    font-size: 56px;
-    font-weight: 300;
+    font-size: 46px;
   }
-  
+
   .descricao {
-    font-size: 17px;
-    text-transform: capitalize;
-    color: #ffcf7d;
-    font-weight: 500;
-  }
-  
-  .sensacao {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-    margin-top: 4px;
-  }
-  
-  .detalhes-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 24px;
-  }
-  
-  .detalhe-box {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    padding: 12px 6px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  
-  .detalhe-box .label {
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.6);
-  }
-  
-  .detalhe-box .valor {
     font-size: 15px;
-    font-weight: 600;
   }
-  
-  @media (max-width: 400px) {
-    .detalhes-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+
+  .detalhes-grid {
+    gap: 8px;
+    margin-top: 18px;
   }
-  
+
+  .detalhe-box {
+    padding: 10px 4px;
+  }
+
+  .detalhe-box .valor {
+    font-size: 13px;
+  }
+
+  .detalhe-box .label {
+    font-size: 10px;
+  }
+}
+
+/* ===================================================
+   CELULARES PEQUENOS (até 400px)
+=================================================== */
+@media (max-width: 400px) {
+  body {
+    padding: 10px;
+  }
+
+  .card-tempo {
+    padding: 20px 14px;
+    border-radius: 16px;
+  }
+
+  .topo h1 {
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+
+  .busca {
+    gap: 6px;
+  }
+
+  .busca input {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .busca button {
+    width: 38px;
+  }
+
+  .principal {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .icone-tempo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .temp-grande span {
+    font-size: 38px;
+  }
+
+  .localidade h2 {
+    font-size: 18px;
+  }
+
+  .descricao {
+    font-size: 14px;
+  }
+
+  .sensacao {
+    font-size: 12px;
+  }
+
+  .detalhes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===================================================
+   CELULARES MUITO PEQUENOS (até 320px)
+=================================================== */
+@media (max-width: 320px) {
+  .card-tempo {
+    padding: 16px 10px;
+  }
+
+  .topo h1 {
+    font-size: 15px;
+  }
+
+  .busca input {
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+
+  .busca button {
+    width: 34px;
+  }
+
+  .temp-grande span {
+    font-size: 32px;
+  }
+
+  .icone-tempo {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* ===================================================
+   TABLETS GRANDES / TELAS INTERMEDIÁRIAS (601px a 900px)
+=================================================== */
+@media (min-width: 601px) and (max-width: 900px) {
+  .card-tempo {
+    max-width: 460px;
+  }
+}
+
+/* ===================================================
+   DESKTOPS E TELAS GRANDES (min 1200px)
+=================================================== */
+@media (min-width: 1200px) {
+  .card-tempo {
+    max-width: 480px;
+    padding: 36px 32px;
+  }
+
+  .topo h1 {
+    font-size: 24px;
+  }
+
+  .icone-tempo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .temp-grande span {
+    font-size: 60px;
+  }
+}
+
+/* ===================================================
+   TELAS ULTRA WIDE / MONITORES 4K (min 1920px)
+=================================================== */
+@media (min-width: 1920px) {
+  .card-tempo {
+    max-width: 520px;
+  }
+}
+
+/* ===================================================
+   ORIENTAÇÃO PAISAGEM EM CELULARES (altura pequena)
+=================================================== */
+@media (max-height: 480px) and (orientation: landscape) {
+  body {
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .card-tempo {
+    padding: 16px 20px;
+  }
+
+  .topo h1 {
+    margin-bottom: 10px;
+  }
+
+  .detalhes-grid {
+    margin-top: 12px;
+  }
+}
