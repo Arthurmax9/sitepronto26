@@ -4,24 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pizzaria Fiammata</title>
+<meta name="description" content="Pizzaria Fiammata - pizzas artesanais assadas em forno a lenha.">
+<meta name="theme-color" content="#8b4f00">
+
+<!-- Imagem principal carregada primeiro -->
+<link rel="preload" as="image" href="img/pessoaspizza.webp" fetchpriority="high">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- Fonte carregada sem bloquear renderização -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
 
 <link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
 
 <!-- ===== HEADER ===== -->
 <header class="header">
-  <a href="../index.html">Início</a>
-
+  <a href="../index.html" class="voltar">Início</a>
   <div class="logo">PIZZARIA<br><span>FIAMMATA</span></div>
-  <button class="menu-toggle" id="menuToggle">☰</button>
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">☰</button>
   <nav class="nav" id="nav">
     <a href="#inicio" class="active">início</a>
     <a href="#casas">nossas casas</a>
@@ -33,10 +36,11 @@
   </nav>
 </header>
 
+<main>
 <!-- ===== HERO ===== -->
 <section class="hero" id="inicio">
   <div class="img-placeholder hero-bg-img">
-    <img src="img/pessoaspizza.webp" alt="pessoaspizza" width="1600" height="900" fetchpriority="high">
+    <img src="img/pessoaspizza.webp" alt="Pessoas comendo pizza" width="1600" height="900" fetchpriority="high" decoding="async">
   </div>
   <div class="hero-overlay"></div>
   <h1>fogo, sabor e tradição</h1>
@@ -47,7 +51,7 @@
   <div class="promo-left">
     <p class="promo-tag">tem sabor que</p>
     <h2>é só nosso</h2>
-    <div class="img-placeholder promo-illustration"><img src="img/animacaopizza.webp" alt="" width="400" height="180" loading="lazy"></div>
+    <div class="img-placeholder promo-illustration"><img src="img/animacaopizza.webp" alt="" width="400" height="180" loading="lazy" decoding="async"></div>
   </div>
   <div class="promo-center">
     <span class="promo-novidade">Novidade</span>
@@ -57,7 +61,7 @@
   </div>
   <div class="promo-right">
     <span class="novidade-vertical">novidade</span>
-    <div class="img-placeholder promo-pizza-img"><img src="img/novosabor.webp" alt="" width="400" height="220" loading="lazy"></div>
+    <div class="img-placeholder promo-pizza-img"><img src="img/novosabor.webp" alt="Pizza Frango Cremoso" width="400" height="220" loading="lazy" decoding="async"></div>
   </div>
 </section>
 
@@ -72,15 +76,15 @@
   </p>
   <div class="casas-grid">
     <div class="casa-card">
-      <div class="img-placeholder casa-img"><img src="img/pizzaria1.webp" alt="" width="320" height="280" loading="lazy"></div>
+      <div class="img-placeholder casa-img"><img src="img/pizzaria1.webp" alt="Unidade Jardins" width="320" height="280" loading="lazy" decoding="async"></div>
       <span class="casa-label">jardins</span>
     </div>
     <div class="casa-card">
-      <div class="img-placeholder casa-img"><img src="img/pizzaria2.webp" alt="" width="320" height="280" loading="lazy"></div>
+      <div class="img-placeholder casa-img"><img src="img/pizzaria2.webp" alt="Unidade Centro" width="320" height="280" loading="lazy" decoding="async"></div>
       <span class="casa-label">centro</span>
     </div>
     <div class="casa-card">
-      <div class="img-placeholder casa-img"><img src="img/pizzaria3.webp" alt="" width="320" height="280" loading="lazy"></div>
+      <div class="img-placeholder casa-img"><img src="img/pizzaria3.webp" alt="Unidade Vila Nova" width="320" height="280" loading="lazy" decoding="async"></div>
       <span class="casa-label">vila nova</span>
     </div>
   </div>
@@ -94,19 +98,19 @@
   </div>
   <div class="pizza-grid">
     <div class="pizza-card">
-      <div class="img-placeholder pizza-img"><img src="img/sabor1.webp" alt="" width="280" height="280" loading="lazy"></div>
+      <div class="img-placeholder pizza-img"><img src="img/sabor1.webp" alt="Pizza Clássica" width="280" height="280" loading="lazy" decoding="async"></div>
       <span>Clássica</span>
     </div>
     <div class="pizza-card">
-      <div class="img-placeholder pizza-img"><img src="img/sabor2.webp" alt="" width="280" height="280" loading="lazy"></div>
+      <div class="img-placeholder pizza-img"><img src="img/sabor2.webp" alt="Pizza Verde Fresca" width="280" height="280" loading="lazy" decoding="async"></div>
       <span>Verde Fresca</span>
     </div>
     <div class="pizza-card">
-      <div class="img-placeholder pizza-img"><img src="img/sabor3.webp" alt="" width="280" height="280" loading="lazy"></div>
+      <div class="img-placeholder pizza-img"><img src="img/sabor3.webp" alt="Pizza Fiammata Especial" width="280" height="280" loading="lazy" decoding="async"></div>
       <span>Fiammata Especial</span>
     </div>
     <div class="pizza-card">
-      <div class="img-placeholder pizza-img"><img src="img/sabor4.webp" alt="" width="280" height="280" loading="lazy"></div>
+      <div class="img-placeholder pizza-img"><img src="img/sabor4.webp" alt="Pizza Calabresa Picante" width="280" height="280" loading="lazy" decoding="async"></div>
       <span>Calabresa Picante</span>
     </div>
   </div>
@@ -128,7 +132,7 @@
     </div>
   </div>
   <div class="delivery-right">
-    <div class="img-placeholder delivery-img"><img src="img/caixapizza.webp" alt=" " width="700" height="400" loading="lazy"></div>
+    <div class="img-placeholder delivery-img"><img src="img/caixapizza.webp" alt="Caixa de pizza para delivery" width="700" height="400" loading="lazy" decoding="async"></div>
   </div>
 </section>
 
@@ -140,7 +144,7 @@
     <a href="#" class="btn btn-dark">faça sua reserva</a>
   </div>
   <div class="reservas-right">
-    <div class="img-placeholder reservas-img"><img src="img/pessoascomendo.webp" alt="" width="560" height="320" loading="lazy"></div>
+    <div class="img-placeholder reservas-img"><img src="img/pessoascomendo.webp" alt="Clientes no salão" width="560" height="320" loading="lazy" decoding="async"></div>
   </div>
 </section>
 
@@ -148,9 +152,9 @@
 <section class="instagram">
   <h2 class="center">acompanhe a fiammata <em>no instagram</em></h2>
   <div class="insta-grid">
-    <div class="img-placeholder insta-img"><img src="img/insta1.webp" alt="" width="340" height="340" loading="lazy"></div>
-    <div class="img-placeholder insta-img"><img src="img/insta2.webp" alt="" width="340" height="340" loading="lazy"></div>
-    <div class="img-placeholder insta-img"><img src="img/insta3.webp" alt="" width="340" height="340" loading="lazy"></div>
+    <div class="img-placeholder insta-img"><img src="img/insta1.webp" alt="Post do Instagram 1" width="340" height="340" loading="lazy" decoding="async"></div>
+    <div class="img-placeholder insta-img"><img src="img/insta2.webp" alt="Post do Instagram 2" width="340" height="340" loading="lazy" decoding="async"></div>
+    <div class="img-placeholder insta-img"><img src="img/insta3.webp" alt="Post do Instagram 3" width="340" height="340" loading="lazy" decoding="async"></div>
   </div>
   <div class="center">
     <a href="#" class="btn btn-dark">siga @pizzariafiammata</a>
@@ -162,13 +166,14 @@
   <p class="newsletter-title">Saiba primeiro das nossas novidades e promoções no seu e-mail:</p>
   <p class="newsletter-obs">*campos obrigatórios</p>
   <form class="newsletter-form" action="https://formspree.io/f/xeaqrlzb" method="POST">
-    <input type="text" name="nome" placeholder="Nome*" required>
-    <input type="email" name="email" placeholder="E-mail*" required>
-    <input type="text" name="aniversario" placeholder="Data de aniversário*" required>
+    <input type="text" name="nome" placeholder="Nome*" autocomplete="name" required>
+    <input type="email" name="email" placeholder="E-mail*" autocomplete="email" required>
+    <input type="text" name="aniversario" placeholder="Data de aniversário*" onfocus="this.type='date'" required>
     <button type="submit" class="btn btn-dark">enviar</button>
   </form>
   <p class="newsletter-safe">Suas informações estão seguras</p>
 </section>
+</main>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
@@ -192,9 +197,9 @@
     <div class="footer-col">
       <h4>redes sociais</h4>
       <div class="footer-social">
-        <a href="#">📷</a>
-        <a href="#">📘</a>
-        <a href="#">▶️</a>
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="YouTube">▶️</a>
       </div>
       <h4>formas de pagamento</h4>
       <div class="img-placeholder payment-img">[LOGOS DE PAGAMENTO]</div>
@@ -204,13 +209,12 @@
   <div class="footer-bottom">
     <div class="img-placeholder company-logo">[LOGO EMPRESA]</div>
     <p><a href="#">Política de Cookies e Privacidade</a></p>
-    <p>*2025 Pizzaria Fiammata. Todos os direitos reservados</p>
+    <p>© 2025 Pizzaria Fiammata. Todos os direitos reservados</p>
   </div>
 </footer>
 
 <!-- ===== WHATSAPP FLOAT ===== -->
-<a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-float">📱</a>
+<a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Falar no WhatsApp">📱</a>
 
-<script src="script.js" defer></script>
 </body>
 </html>

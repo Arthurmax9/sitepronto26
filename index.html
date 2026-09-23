@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arthur Max | Desenvolvedor de Sistemas & Soluções em Tecnologia</title>
+<title>Max Tech Poa | Desenvolvedor de Sistemas & Soluções em Tecnologia</title>
+<meta name="description" content="Arthur, Analista e Desenvolvedor de Sistemas em Porto Alegre. Criação e melhoria de sites, automações e soluções com Machine Learning.">
 
 <!-- Content Security Policy -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-ancestors 'none';">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
 
 <!-- ===== HEADER ===== -->
 <header class="header">
-  <div class="logo">A.Max<span>C</span></div>
-  <nav class="nav">
+  <div class="logo">Max Tech <span>Poa</span></div>
+  <nav class="nav" id="nav">
     <a href="#inicio">Início</a>
     <a href="#sobre">Sobre mim</a>
     <a href="#areas">Áreas</a>
@@ -31,18 +31,20 @@
     <a href="#faq">FAQ</a>
     <a href="#contato">Contato</a>
   </nav>
-  <button class="menu-toggle" id="menuToggle">☰</button>
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">☰</button>
 </header>
+
+<main>
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="inicio">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <span class="badge">⚙️ Analista de sistemas.</span>
+    <span class="badge">⚙️ Analista de sistemas</span>
     <h1>Tecnologia aplicada para<br>resolver problemas <span class="grad-text">de verdade</span>.</h1>
     <p class="hero-text">
-      Sou <strong>Arthur Max</strong>, Analista e Desenvolvedor de Sistemas. Construo
+      Sou <strong>Arthur</strong>, Analista e Desenvolvedor de Sistemas. Construo
       <strong class="highlight">sites, automações e soluções com Machine Learning</strong>
       — sempre com código limpo, boas práticas e foco em resultado real para o negócio.
     </p>
@@ -106,14 +108,14 @@
     <div class="sobre-img">
       <div class="sobre-img-glow"></div>
       <div class="foto-placeholder">
-        <img src="codemax.webp" alt="Arthur Max - Desenvolvedor de Sistemas" width="240" height="240" fetchpriority="high">
+        <img src="imgprincipal/codemax.webp" alt="Arthur - Desenvolvedor de Sistemas" width="240" height="240" fetchpriority="high">
       </div>
       <span class="status-badge"><span class="status-dot"></span> Disponível para novos projetos</span>
     </div>
 
     <div class="sobre-texto">
       <span class="tag">Sobre mim</span>
-      <h2>Arthur Max</h2>
+      <h2>Arthur</h2>
       <p class="cargo">Analista &amp; Desenvolvedor de Sistemas <span class="cargo-sep">•</span> Dev, Automação & Dados</p>
 
       <p class="sobre-lead">
@@ -129,7 +131,7 @@
       </p>
       <p>
         Também aplico <strong>Machine Learning</strong> em automações e análise de
-        dados — trazendo inteligência de ponta para decisões de negócio mais
+        dados — trazendo inteligência para decisões de negócio mais
         rápidas e precisas.
       </p>
 
@@ -154,7 +156,7 @@
         <div class="sobre-social">
           <a href="https://www.linkedin.com/in/arthur-max-45430926a/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.850 3.370-1.850 3.601 0 4.267 2.370 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
           </a>
           <a href="https://github.com/Arthurmax9" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
@@ -269,8 +271,9 @@
 
   <!-- ===== CARROSSEL 1: SITES ===== -->
   <h3 class="subtitulo-carrossel">🌐 Sites</h3>
-
-  <footer class="subtitulo-carrossel"> todas informações dos sites abaixo são ficticias para preservar os dados dos clientes </footer>
+  <p class="subtitle center aviso-ficticio">
+    Todas as informações dos sites abaixo são fictícias para preservar os dados dos clientes.
+  </p>
 
   <div class="carrossel-wrapper">
     <button class="seta seta-esq" id="setaEsqSites" aria-label="Anterior">&#10094;</button>
@@ -279,19 +282,19 @@
 
       <div class="card-projeto">
         <div class="card-banner banner-green">
-          <img src="academiaimg.webp" alt="Academia" width="320" height="200" loading="lazy">
+          <img src="imgprincipal/academiaimg.webp" alt="Site de academia" width="320" height="200" loading="lazy">
         </div>
         <div class="card-body">
           <span class="pill pill-green">Academia</span>
           <h3>Studio de Treinamento</h3>
-          <p>Dark mode com neon, CTA de "aula gratuita" e depoimentos reais.</p>
+          <p>Dark mode com neon, CTA de "aula gratuita" e seção de depoimentos.</p>
           <a href="academia/index.html" class="link-cta">Ver projeto →</a>
         </div>
       </div>
 
       <div class="card-projeto">
         <div class="card-banner banner-orange">
-          <img src="img-pizzaria.webp" alt="Pizzaria" width="320" height="200" loading="lazy">
+          <img src="imgprincipal/img-pizzaria.webp" alt="Site de pizzaria" width="320" height="200" loading="lazy">
         </div>
         <div class="card-body">
           <span class="pill pill-orange">Pizzaria</span>
@@ -303,11 +306,11 @@
 
       <div class="card-projeto">
         <div class="card-banner banner-purple">
-          <img src="clinica/img/imagemclinica.webp" alt="Clínica" width="320" height="200" loading="lazy">
+          <img src="clinica/img/imagemclinica.webp" alt="Site de clínica de psicologia" width="320" height="200" loading="lazy">
         </div>
         <div class="card-body">
-          <span class="pill pill-purple">Clinica</span>
-          <h3>Clínica &amp; </h3>
+          <span class="pill pill-purple">Psicologia</span>
+          <h3>Clínica de Psicologia</h3>
           <p>Visual clean, elegante, com agendamento facilitado.</p>
           <a href="clinica/index.html" class="link-cta">Ver projeto →</a>
         </div>
@@ -315,15 +318,28 @@
 
       <div class="card-projeto">
         <div class="card-banner banner-purple">
-          <img src="advocacia/img/imgadovacia.webp" alt="Advocacia" width="320" height="200" loading="lazy">
+          <img src="advocacia/img/imgadovacia.webp" alt="Site de escritório de advocacia" width="320" height="200" loading="lazy">
         </div>
         <div class="card-body">
-          <span class="pill pill-purple">escritorio</span>
-          <h3>Advocacia &amp; </h3>
-          <p>escritorio de Advocacia </p>
+          <span class="pill pill-purple">Advocacia</span>
+          <h3>Escritório de Advocacia</h3>
+          <p>Visual sóbrio e profissional, focado em autoridade e captação de clientes.</p>
           <a href="advocacia/index.html" class="link-cta">Ver projeto →</a>
         </div>
       </div>
+
+      <div class="card-projeto">
+        <div class="card-banner banner-purple">
+          <img src="dentista/img/clinicadentaria.webp.png" alt="Site de clínica odontológica" width="320" height="200" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="pill pill-purple">Odontologia</span>
+          <h3>Clínica Odontológica</h3>
+          <p>Layout claro e moderno, com destaque para tratamentos e agendamento.</p>
+          <a href="dentista/index.html" class="link-cta">Ver projeto →</a>
+        </div>
+      </div>
+
       <!-- Adicione novos SITES aqui, seguindo o mesmo padrão de .card-projeto -->
 
     </div>
@@ -363,11 +379,12 @@
         </div>
       </div>
 
+      <!-- Adicione novos OUTROS PROJETOS aqui (automações, bots, IA, etc) -->
+
     </div>
 
     <button class="seta seta-dir" id="setaDirOutros" aria-label="Próximo">&#10095;</button>
   </div>
-  <!-- Adicione novos OUTROS PROJETOS aqui (automações, bots, IA, etc) -->
 
   <div class="contato-projeto-cta">
     <p>Nenhum modelo pronto é exatamente o que você precisa?</p>
@@ -380,78 +397,66 @@
   <div class="skills-head">
     <span class="tag center">Depoimentos</span>
     <h2 class="center">O que dizem meus clientes</h2>
-    <p class="subtitle center">Resultados reais entregues para negócios de diferentes segmentos</p>
+    <p class="subtitle center">Experiências de negócios de diferentes segmentos</p>
   </div>
 
   <div class="depo-grid">
     <div class="depo-card">
       <div class="depo-quote">"</div>
-      <p>"Precisávamos de um site que transmitisse seriedade e confiança para nossos clientes. O resultado superou as expectativas — profissional, rápido e com excelente captação de leads."</p>
+      <p>"O visual moderno chamou a atenção dos alunos logo de cara. O botão de aula gratuita facilitou muito o primeiro contato."</p>
       <div class="depo-autor">
-        <div class="depo-avatar">RF</div>
+        <div class="depo-avatar">🏋️</div>
         <div>
-          <span class="depo-nome">Dr. Ricardo Fontana</span>
-          <span class="depo-cargo">Advocacia Fontana</span>
+          <span class="depo-nome">Cliente Academia</span>
+          <span class="depo-cargo">Studio de Treinamento</span>
         </div>
       </div>
     </div>
 
     <div class="depo-card">
       <div class="depo-quote">"</div>
-      <p>"O site trouxe uma credibilidade que não tínhamos antes. Pacientes relatam se sentir mais seguros para agendar consultas online. Um trabalho sério, sensível ao nosso público."</p>
+      <p>"Com o cardápio digital, os clientes escolhem os sabores e já mandam o pedido direto no WhatsApp. O atendimento ficou mais rápido e organizado."</p>
       <div class="depo-autor">
-        <div class="depo-avatar">AM</div>
+        <div class="depo-avatar">🍕</div>
         <div>
-          <span class="depo-nome">Dra. Ana Martins</span>
-          <span class="depo-cargo">Clínica Vida Plena — Psicologia</span>
+          <span class="depo-nome">Cliente Pizzaria</span>
+          <span class="depo-cargo">Cardápio Digital</span>
         </div>
       </div>
     </div>
 
     <div class="depo-card">
       <div class="depo-quote">"</div>
-      <p>"Nossos pedidos pelo WhatsApp triplicaram após o lançamento do cardápio digital. Retorno rápido, atenção aos detalhes e entrega dentro do prazo."</p>
+      <p>"O site ficou elegante e transmite a confiança que nossos pacientes precisam. O agendamento ficou muito mais prático."</p>
       <div class="depo-autor">
-        <div class="depo-avatar">PB</div>
+        <div class="depo-avatar">🧠</div>
         <div>
-          <span class="depo-nome">Paulo Bellini</span>
-          <span class="depo-cargo">Pizzaria Bella Massa</span>
+          <span class="depo-nome">Cliente Psicologia</span>
+          <span class="depo-cargo">Clínica de Psicologia</span>
         </div>
       </div>
     </div>
 
     <div class="depo-card">
       <div class="depo-quote">"</div>
-      <p>"Conseguimos automatizar o agendamento e reduzir faltas de clientes em mais de 30%. Um projeto que se pagou em poucas semanas."</p>
+      <p>"Precisávamos de uma presença digital que transmitisse seriedade. O resultado ficou profissional e os contatos chegam de forma organizada."</p>
       <div class="depo-autor">
-        <div class="depo-avatar">JS</div>
+        <div class="depo-avatar">⚖️</div>
         <div>
-          <span class="depo-nome">Juliana Santos</span>
-          <span class="depo-cargo">Studio Beleza Rara</span>
+          <span class="depo-nome">Cliente Advocacia</span>
+          <span class="depo-cargo">Escritório de Advocacia</span>
         </div>
       </div>
     </div>
 
     <div class="depo-card">
       <div class="depo-quote">"</div>
-      <p>"Investimento que se pagou já na primeira semana. Site rápido, organizado e que reflete exatamente a qualidade do nosso trabalho."</p>
+      <p>"O site apresenta nossos tratamentos de forma clara e moderna. Os pacientes chegam já sabendo o que procuram."</p>
       <div class="depo-autor">
-        <div class="depo-avatar">CM</div>
+        <div class="depo-avatar">🦷</div>
         <div>
-          <span class="depo-nome">Carlos Medeiros</span>
-          <span class="depo-cargo">Academia Fit Power</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="depo-card">
-      <div class="depo-quote">"</div>
-      <p>"Trabalho técnico e sério, com comunicação clara em cada etapa. Recomendo para qualquer negócio que queira uma presença digital de verdade."</p>
-      <div class="depo-autor">
-        <div class="depo-avatar">LT</div>
-        <div>
-          <span class="depo-nome">Leandro Torres</span>
-          <span class="depo-cargo">Escritório Torres & Associados</span>
+          <span class="depo-nome">Cliente Odontologia</span>
+          <span class="depo-cargo">Clínica Odontológica</span>
         </div>
       </div>
     </div>
@@ -478,11 +483,11 @@
     </div>
     <div class="faq-item">
       <button class="faq-question">Meu site vai funcionar bem no celular? <span class="faq-icon">+</span></button>
-      <div class="faq-answer"><p>Sim, todos os projetos são 100% responsivos, adaptando-se perfeitamente a celulares, tablets e desktops.</p></div>
+      <div class="faq-answer"><p>Sim, todos os projetos são 100% responsivos, adaptando-se a celulares, tablets e desktops.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-question">Vocês entregam para qualquer tipo de negócio? <span class="faq-icon">+</span></button>
-      <div class="faq-answer"><p>Sim! Já desenvolvi soluções para academias, pizzarias, salões de beleza, clínicas, escritórios e diversos outros segmentos.</p></div>
+      <button class="faq-question">Vocês atendem qualquer tipo de negócio? <span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Sim! Já desenvolvi soluções para academias, pizzarias, clínicas de psicologia, clínicas odontológicas, escritórios de advocacia e outros segmentos.</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-question">Como funciona o suporte? <span class="faq-icon">+</span></button>
@@ -509,26 +514,28 @@
   <h2 class="newsletter-title">Nós entramos em contato:</h2>
   <p class="newsletter-obs">*campos obrigatórios</p>
   <form class="newsletter-form" action="https://formspree.io/f/xwlkrylg" method="POST">
-    <input type="text" name="nome" placeholder="Nome*" required>
-    <input type="email" name="email" placeholder="E-mail*" required>
-    <input type="tel" name="telefone" placeholder="telefone*" required>
+    <input type="text" name="nome" placeholder="Nome*" autocomplete="name" required>
+    <input type="email" name="email" placeholder="E-mail*" autocomplete="email" required>
+    <input type="tel" name="telefone" placeholder="Telefone*" autocomplete="tel" required>
 
-    <!-- Honeypot anti-spam (invisível para humanos, Formspree descarta automaticamente) -->
-    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <!-- Honeypot anti-spam -->
+    <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-    <button type="submit" class="btn btn-dark">enviar</button>
+    <button type="submit" class="btn btn-dark">Enviar</button>
   </form>
   <p class="newsletter-safe">Suas informações estão seguras</p>
 </section>
 
+</main>
+
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
-  <p>© 2026 Max Code — Arthur Max. Todos os direitos reservados.</p>
+  <p>© 2026 Max Tech Poa — Arthur. Todos os direitos reservados.</p>
 </footer>
 
 <!-- WhatsApp flutuante -->
-<a href="https://wa.me/5551993776060" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
-  <img src="wpp.webp" alt="WhatsApp" width="60" height="60" loading="lazy">
+<a href="https://wa.me/5551993776060" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Falar no WhatsApp">
+  <img src="imgprincipal/wpp.webp" alt="WhatsApp" width="60" height="60" loading="lazy">
 </a>
 
 </body>

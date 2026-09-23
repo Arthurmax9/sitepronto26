@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLINICA DENTARIA Porto Alegre | Clínica Odontológica no Centro Histórico</title>
+  <meta name="description" content="Clínica odontológica em Porto Alegre: implantes, próteses, ortodontia, odontopediatria, estética e clínico geral. Agende sua avaliação.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- SEO local (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "CLINICA DENTARIA Porto Alegre Centro",
+    "telephone": "+55513333333",
+    "email": "rs.portoalegrecentro@CLINICA.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua dos Andradas, 5555",
+      "addressLocality": "Porto Alegre",
+      "addressRegion": "RS",
+      "addressCountry": "BR"
+    },
+    "openingHours": ["Mo-Fr 08:00-19:00", "Sa 08:00-16:00"],
+    "url": "https://CLINICAportoalegre.com.br/"
+  }
+  </script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span>📍 Rua dos Andradas, 5555 · Centro Histórico</span>
+      <span>🕘 Seg–Sex 08h–19h · Sáb 08h–16h</span>
+      <a href="tel:+55555555555">📞 (51) 555555555</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo" aria-label="Sorridents Porto Alegre - Início">
+        <span class="logo__mark">S</span>
+        <span class="logo__text">CLINICA DENTARIA<small>Porto Alegre</small></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul>
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#jornada">Como funciona</a></li>
+          <li><a href="#depoimentos">Pacientes</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <a href="#agendar" class="btn btn--primary header__cta">Agendar avaliação</a>
+
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+          <span class="eyebrow">Clínica odontológica · Centro Histórico</span>
+          <h1>Odontologia completa, com <span class="hl">precisão técnica</span> e atendimento humano.</h1>
+          <p class="hero__lead">Da prevenção ao implante, uma equipe multidisciplinar cuida do seu sorriso em todas as fases da vida, com a experiência da rede de clínicas odontológicas mais premiada da América Latina.</p>
+
+          <div class="hero__actions">
+            <a href="#agendar" class="btn btn--primary btn--lg">Agendar minha avaliação</a>
+            <a href="https://wa.me/5551985631234?text=Ol%C3%A1!%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn btn--ghost btn--lg">Falar no WhatsApp</a>
+          </div>
+
+          <ul class="trust">
+            <li><strong data-count="1995">0</strong><span>rede fundada em</span></li>
+            <li><strong data-count="11">0</strong><span>especialidades</span></li>
+            <li><strong>Todas</strong><span>as idades</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="hero__img">
+            <!-- Substitua por uma foto real da clínica/equipe -->
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=80" alt="Dentista atendendo paciente em consultório moderno" loading="eager">
+          </div>
+          <div class="float-card float-card--a">
+            <span class="float-card__icon">✔</span>
+            <div><strong>Responsável técnica</strong><small>CRO RS 32427</small></div>
+          </div>
+          <div class="float-card float-card--b">
+            <span class="float-card__icon">★</span>
+            <div><strong>Rede premiada</strong><small>América Latina</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESPECIALIDADES -->
+    <section class="section" id="especialidades">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">Especialidades</span>
+          <h2>Qual tratamento você está buscando?</h2>
+          <p>Escolha um tratamento para ver os detalhes. Na avaliação, o dentista define o plano ideal para o seu caso.</p>
+        </header>
+
+        <div class="tabs reveal" role="tablist" aria-label="Especialidades">
+          <button class="tab is-active" role="tab" aria-selected="true" data-tab="implante">Implante</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="protese">Prótese</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="orto">Ortodontia</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="kids">Odontopediatria</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="clinico">Clínico geral</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="estetica">Estética</button>
+        </div>
+
+        <div class="panels">
+          <article class="panel is-active" id="implante" role="tabpanel">
+            <div class="panel__img"><img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&q=80" alt="Modelo de implante dentário" loading="lazy"></div>
+            <div class="panel__body">
+              <h3>Implante Dentário</h3>
+              <p>Perdeu um ou mais dentes? O implante devolve função mastigatória, estética e segurança para sorrir, com planejamento individualizado.</p>
+              <ul class="checks"><li>Planejamento com exames de imagem</li><li>Unitário, múltiplo ou protocolo</li><li>Acompanhamento pós-tratamento</li></ul>
+              <a href="#agendar" class="btn btn--primary" data-service="Implante Dentário">Avaliar meu caso</a>
+            </div>
+          </article>
+
+          <article class="panel" id="protese" role="tabpanel" hidden>
+            <div class="panel__img"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80" alt="Prótese dentária" loading="lazy"></div>
+            <div class="panel__body">
+              <h3>Prótese Dentária</h3>
+              <p>Soluções fixas e removíveis para substituir dentes perdidos e voltar a sorrir com confiança.</p>
+              <ul class="checks"><li>Próteses fixas e removíveis</li><li>Coroas e pontes</li><li>Ajuste personalizado</li></ul>
+              <a href="#agendar" class="btn btn--primary" data-service="Prótese Dentária">Avaliar meu caso</a>
+            </div>
+          </article>
+
+          <article class="panel" id="orto" role="tabpanel" hidden>
+            <div class="panel__img"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&q=80" alt="Aparelho ortodôntico" loading="lazy"></div>
+            <div class="panel__body">
+              <h3>Aparelho Ortodôntico</h3>
+              <p>Tratamentos para uma mastigação adequada e um sorriso mais alinhado, do aparelho fixo às opções estéticas.</p>
+              <ul class="checks"><li>Aparelho fixo e estético</li><li>Correção de mordida</li><li>Manutenções periódicas</li></ul>
+              <a href="#agendar" class="btn btn--primary" data-service="Ortodontia">Avaliar meu caso</a>
+            </div>
+          </article>
+
+          <article class="panel" id="kids" role="tabpanel" hidden>
+            <div class="panel__img"><img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=800&q=80" alt="Atendimento odontológico infantil" loading="lazy"></div>
+            <div class="panel__body">
+              <h3>Odontopediatria</h3>
+              <p>Saúde bucal desde cedo, com profissionais preparados para um atendimento acolhedor às crianças.</p>
+              <ul class="checks"><li>Prevenção e orientação aos pais</li><li>Tratamento de cáries</li><li>Ambiente acolhedor</li></ul>
+              <a href="#agendar" class="btn btn--primary" data-service="Odontopediatria">Agendar para meu filho</a>
+            </div>
+          </article>
+
+          <article class="panel" id="clinico" role="tabpanel" hidden>
+            <div class="panel__img"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&q=80" alt="Consulta odontológica de rotina" loading="lazy"></div>
+            <div class="panel__body">
+              <h3>Clínico Geral</h3>
+              <p>Canal, limpeza, restauração, extração, periodontia e outros cuidados essenciais para a sua saúde bucal.</p>
+              <ul class="checks"><li>Limpeza e prevenção</li><li>Endodontia (canal)</li><li>Periodontia e cirurgias</li></ul>
+              <a href="#agendar" class="btn btn--primary" data-service="Clínico Geral">Agendar consulta</a>
+            </div>
+          </article>
+
+          <article class="panel" id="estetica" role="tabpanel" hidden>
+            <div class="panel__img"><img src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=800&q=80" alt="Sorriso após tratamento estético" loading="lazy"></div>
+            <div class="panel__body">
+              <h3>Estética</h3>
+              <p>Clareamento, facetas e harmonização orofacial para um sorriso mais bonito, brilhante e natural.</p>
+              <ul class="checks"><li>Clareamento dental</li><li>Facetas</li><li>Harmonização orofacial</li></ul>
+              <a href="#agendar" class="btn btn--primary" data-service="Estética">Avaliar meu caso</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="section section--dark" id="diferenciais">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow eyebrow--light">Por que a clinica dentaria</span>
+          <h2>Estrutura de rede, cuidado de consultório.</h2>
+        </header>
+        <div class="features">
+          <div class="feature reveal"><span class="feature__num">01</span><h3>Rede premiada</h3><p>A rede de clínicas odontológicas mais premiada da América Latina, fundada em 1995.</p></div>
+          <div class="feature reveal"><span class="feature__num">02</span><h3>Equipe multidisciplinar</h3><p>Especialistas em diferentes áreas trabalhando juntos no seu plano de tratamento.</p></div>
+          <div class="feature reveal"><span class="feature__num">03</span><h3>Todas as idades</h3><p>Da primeira consulta da criança à reabilitação oral do idoso, no mesmo lugar.</p></div>
+          <div class="feature reveal"><span class="feature__num">04</span><h3>Localização central</h3><p>No Centro Histórico, com horário estendido e atendimento aos sábados.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JORNADA -->
+    <section class="section" id="jornada">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">Como funciona</span>
+          <h2>Do primeiro contato ao sorriso novo, em 4 etapas</h2>
+        </header>
+        <ol class="steps">
+          <li class="step reveal"><span>1</span><h3>Agendamento</h3><p>Pelo site, telefone ou WhatsApp, no horário que for melhor para você.</p></li>
+          <li class="step reveal"><span>2</span><h3>Avaliação</h3><p>Exame clínico completo e escuta das suas necessidades.</p></li>
+          <li class="step reveal"><span>3</span><h3>Plano claro</h3><p>Etapas, prazos e condições explicados de forma transparente.</p></li>
+          <li class="step reveal"><span>4</span><h3>Tratamento e acompanhamento</h3><p>Execução com a equipe especialista e retorno periódico.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="section section--soft" id="depoimentos">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="eyebrow">Pacientes</span>
+          <h2>O que dizem sobre nós</h2>
+        </header>
+        <!-- Substitua pelos depoimentos reais (ex.: avaliações do Google) -->
+        <div class="slider reveal" id="slider">
+          <div class="slider__track">
+            <blockquote class="quote"><p>“Atendimento atencioso do início ao fim. Explicaram cada etapa do meu implante.”</p><cite>Paciente · Implante</cite></blockquote>
+            <blockquote class="quote"><p>“Meu filho perdeu o medo de dentista. Equipe muito paciente e cuidadosa.”</p><cite>Paciente · Odontopediatria</cite></blockquote>
+            <blockquote class="quote"><p>“Clínica organizada, pontual e com horário no sábado, o que facilitou muito.”</p><cite>Paciente · Clínico geral</cite></blockquote>
+          </div>
+          <div class="slider__controls">
+            <button class="slider__btn" data-dir="-1" aria-label="Anterior">←</button>
+            <div class="slider__dots" id="dots"></div>
+            <button class="slider__btn" data-dir="1" aria-label="Próximo">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container container--narrow">
+        <header class="section__head reveal">
+          <span class="eyebrow">Dúvidas frequentes</span>
+          <h2>Antes de agendar</h2>
+        </header>
+        <div class="faq">
+          <details class="reveal"><summary>Quais tratamentos vocês realizam?</summary><p>Clínico geral, ortodontia, odontopediatria, periodontia, implantodontia, prótese, endodontia, cirurgia, DTM e dor orofacial, dentística/estética e harmonização orofacial.</p></details>
+          <details class="reveal"><summary>Qual o horário de funcionamento?</summary><p>De segunda a sexta, das 08h às 19h, e aos sábados, das 08h às 16h.</p></details>
+          <details class="reveal"><summary>Atendem crianças?</summary><p>Sim. Temos odontopediatria e atendemos pacientes de todas as idades.</p></details>
+          <details class="reveal"><summary>Como agendar?</summary><p>Pelo formulário abaixo, pelo WhatsApp (51) 98563-1234 ou pelo telefone (51) 3340-5959.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENDAMENTO -->
+    <section class="section section--cta" id="agendar">
+      <div class="container cta__grid">
+        <div class="cta__text reveal">
+          <span class="eyebrow eyebrow--light">Agendamento</span>
+          <h2>Dê o primeiro passo hoje.</h2>
+          <p>Preencha os dados e nossa equipe entra em contato para confirmar o melhor horário.</p>
+          <ul class="checks checks--light">
+            <li>Retorno rápido da equipe</li>
+            <li>Sem compromisso</li>
+            <li>Seus dados protegidos (LGPD)</li>
+          </ul>
+        </div>
+
+        <form class="form reveal" id="form" novalidate>
+          <div class="field">
+            <label for="nome">Nome completo</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="tel">WhatsApp / Telefone</label>
+            <input id="tel" name="tel" type="tel" inputmode="numeric" placeholder="(51) 90000-0000" autocomplete="tel" required>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="servico">Tratamento de interesse</label>
+            <select id="servico" name="servico" required>
+              <option value="">Selecione</option>
+              <option>Implante Dentário</option>
+              <option>Prótese Dentária</option>
+              <option>Ortodontia</option>
+              <option>Odontopediatria</option>
+              <option>Clínico Geral</option>
+              <option>Estética</option>
+              <option>Ainda não sei</option>
+            </select>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="periodo">Melhor período</label>
+            <select id="periodo" name="periodo">
+              <option>Manhã</option><option>Tarde</option><option>Noite (até 19h)</option><option>Sábado</option>
+            </select>
+          </div>
+          <label class="consent">
+            <input type="checkbox" id="lgpd" required>
+            <span>Concordo com o uso dos meus dados para contato, conforme a <a href="#">Política de Privacidade</a>.</span>
+          </label>
+          <small class="error" id="lgpdError"></small>
+          <button type="submit" class="btn btn--primary btn--lg btn--block">Solicitar agendamento</button>
+          <p class="form__note">Ao enviar, você será direcionado ao nosso WhatsApp.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section" id="contato">
+      <div class="container contact__grid">
+        <div class="reveal">
+          <span class="eyebrow">Contato</span>
+          <h2>Venha nos visitar</h2>
+          <ul class="contact__list">
+            <li><strong>Endereço</strong>Rua dos Andradas, 5555 – Centro Histórico, Porto Alegre/RS</li>
+            <li><strong>Telefone</strong><a href="tel:+55555555">(51) 555555559</a></li>
+            <li><strong>WhatsApp</strong><a href="https://wa.me/5551985631234" target="_blank" rel="noopener">(51) 555555555</a></li>
+            <li><strong>E-mail</strong><a href="mailto:rs.portoalegrecentro@CLINICADENTARIA.com.br">rs.portoalegrecentro@CLINICADENTARIA.com.br</a></li>
+            <li><strong>Horários</strong>Seg–Sex 08h–19h · Sáb 08h–16h</li>
+          </ul>
+        </div>
+        <div class="map reveal">
+          <iframe title="Mapa Sorridents Porto Alegre" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Rua+dos+Andradas+5555+Porto+Alegre&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="#inicio" class="logo logo--light"><span class="logo__mark">S</span><span class="logo__text">Sorridents<small>Porto Alegre</small></span></a>
+        <p>A rede de clínicas odontológicas mais premiada da América Latina.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul><li><a href="#especialidades">Especialidades</a></li><li><a href="#jornada">Como funciona</a></li><li><a href="#faq">Dúvidas</a></li><li><a href="#agendar">Agendar</a></li></ul>
+      </div>
+      <div>
+        <h4>Responsável técnica</h4>
+        <p>Dra. Maria <br>CRO RT RS 000000<br>CRO da Clínica RS 66666</p>
+      </div>
+      <div>
+        <h4>Atendimento</h4>
+        <p>(51) 5555555555<br>Seg–Sex 08h–19h<br>Sáb 08h–16h</p>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <span>© <span id="year"></span> clinica dentaria Porto Alegre. Todos os direitos reservados.</span>
+      <a href="#">Política de Privacidade</a>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a href="https://wa.me/5551985631234?text=Ol%C3%A1!%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.2c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.1c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.3 1.3-4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.4 9.8 10.1 5.1 16 5.1s10.6 4.7 10.6 10.5S21.9 26.1 16 26.1zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+
+  <!-- CTA fixo mobile -->
+  <div class="mobile-cta">
+    <a href="tel:+555133405959" class="btn btn--ghost">Ligar</a>
+    <a href="#agendar" class="btn btn--primary">Agendar</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

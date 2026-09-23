@@ -1,7 +1,11 @@
 // ===== MENU MOBILE =====
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.querySelector('.nav');
-menuToggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+menuToggle?.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', open);
+});
 
 // ===== FAQ ACCORDION =====
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -26,11 +30,14 @@ document.querySelectorAll('.faq-item').forEach(item => {
 // ===== NAVEGAÇÃO SUAVE =====
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute('href'));
+    const id = link.getAttribute('href');
+    if (id.length < 2) return;
+    const target = document.querySelector(id);
     if (target) {
+      e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       nav.classList.remove('open');
+      menuToggle?.setAttribute('aria-expanded', 'false');
     }
   });
 });
@@ -45,6 +52,7 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('show');
+      observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.15 });
@@ -56,11 +64,12 @@ function initCarrossel(carrosselId, setaEsqId, setaDirId) {
   const carrossel = document.getElementById(carrosselId);
   const setaEsq = document.getElementById(setaEsqId);
   const setaDir = document.getElementById(setaDirId);
+  if (!carrossel) return;
 
   function getScrollAmount() {
     const card = carrossel.querySelector('.card-projeto');
     if (!card) return 320;
-    const gap = 30;
+    const gap = parseFloat(getComputedStyle(carrossel).gap) || 30;
     return card.offsetWidth + gap;
   }
 
@@ -76,7 +85,7 @@ function initCarrossel(carrosselId, setaEsqId, setaDirId) {
 initCarrossel('carrosselSites', 'setaEsqSites', 'setaDirSites');
 initCarrossel('carrosselOutros', 'setaEsqOutros', 'setaDirOutros');
 
-// ===== NEWSLETTER / CONTATO - ENVIO VIA FORMSPREE (AJAX) =====
+// ===== FORMULÁRIO - ENVIO VIA FORMSPREE (AJAX) =====
 document.querySelector('.newsletter-form')?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const form = e.target;
@@ -107,9 +116,7 @@ document.querySelector('.newsletter-form')?.addEventListener('submit', async (e)
   }
 });
 
-// ===== ANIMAÇÃO DAS BARRAS DE SKILL (SEM CAUSAR LAYOUT SHIFT) =====
-// Agora usa data-percent no HTML e transform:scaleX() no CSS,
-// evitando reflow forçado e reduzindo o CLS.
+// ===== ANIMAÇÃO DAS BARRAS DE SKILL =====
 const skillFills = document.querySelectorAll('.skill-fill');
 const skillObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
